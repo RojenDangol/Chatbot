@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatbot</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+        .chat-box { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .message { margin: 10px 0; }
+        .user { color: #0b5ed7; }
+        .bot { color: #198754; }
+    </style>
+</head>
+<body>
+<div class="chat-box">
+    <h2>Document Chatbot</h2>
+    {% for sender, message in chat_history %}
+        <div class="message"><strong class="{{ 'user' if sender == 'You' else 'bot' }}">{{ sender }}:</strong> {{ message }}</div>
+    {% endfor %}
+    <form method="post">
+        <input type="text" name="message" placeholder="Ask a question..." required style="width:80%">
+        <button type="submit">Send</button>
+    </form>
+</div>
+</body>
+</html>
