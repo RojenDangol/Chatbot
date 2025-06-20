@@ -49,7 +49,7 @@ def form():
         date = request.form['date']
 
         # Basic validations
-        if not phone.isdigit() or len(phone) < 7:
+        if not phone.isdigit() or len(phone) < 10:
             error = 'Invalid phone number.'
         elif '@' not in email or '.' not in email:
             error = 'Invalid email address.'
