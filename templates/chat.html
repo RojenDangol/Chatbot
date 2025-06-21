@@ -11,6 +11,7 @@
     {% for sender, message in chat_history %}
         <div class="message"><strong class="{{ 'user' if sender == 'You' else 'bot' }}">{{ sender }}:</strong> {{ message }}</div>
     {% endfor %}
+
     <form method="post">
         <input type="text" name="message" placeholder="Ask a question..." required style="width:80%">
         <button type="submit">Send</button>
